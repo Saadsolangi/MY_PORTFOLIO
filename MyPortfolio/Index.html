@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saad's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --header-bg: #333;
+      --hero-bg: linear-gradient(120deg, #4e54c8, #8f94fb);
+      --card-bg: #fff;
+      --btn-bg: #fff;
+      --btn-color: #4e54c8;
+    }
+    .dark-mode {
+      --bg-color: #1e1e1e;
+      --text-color: #f1f1f1;
+      --header-bg: #222;
+      --hero-bg: linear-gradient(120deg, #232526, #414345);
+      --card-bg: #2c2c2c;
+      --btn-bg: #4e54c8;
+      --btn-color: #fff;
+    }body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  transition: all 0.3s ease;
+}
+header {
+  background: var(--header-bg);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+.mode-toggle {
+  background: none;
+  color: white;
+  border: 2px solid white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--header-bg);
+  padding: 1rem;
+}
+.mobile-nav a {
+  color: white;
+  padding: 0.5rem 0;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--hero-bg);
+  color: white;
+  position: relative;
+}
+.hero img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-bottom: 1rem;
+}
+.hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+.hero p { font-size: 1.2rem; margin-bottom: 1rem; }
+.btn {
+  padding: 0.6rem 1.2rem;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.skills, .projects, .services, .testimonials {
+  display: grid;
+  gap: 1.5rem;
+}
+.skills div, .projects div, .services div {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+}
+.contact input, .contact textarea {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.footer {
+  background: var(--header-bg);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+.social-icons a {
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .mobile-nav.show {
+    display: flex;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hero img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+  </style>
+</head>
+<body>  <header>
+    <h2>Saad</h2>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <button class="mode-toggle" onclick="toggleMode()">Toggle Mode</button>
+    </div>
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" onclick="toggleMobileMenu()">About</a>
+    <a href="#skills" onclick="toggleMobileMenu()">Skills</a>
+    <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
+    <a href="#services" onclick="toggleMobileMenu()">Services</a>
+    <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+    <button class="mode-toggle" onclick="toggleMode(); toggleMobileMenu()">Toggle Mode</button>
+  </div>  <div class="hero">
+    <img src="IMG.jpg" alt="Saad's Photo">
+    <h1>Hi, I'm Saad</h1>
+    <p>A passionate Front-End Developer</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </div>  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>Hello! I'm Saad, a creative and self-motivated web developer. I build responsive and interactive websites using HTML, CSS, JavaScript, and modern frameworks.</p>
+  </section>  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+      <div>HTML</div>
+      <div>CSS</div>
+      <div>JavaScript</div>
+      <div>React</div>
+      <div>Tailwind CSS</div>
+      <div>Git & GitHub</div>
+    </div>
+  </section>  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div>
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio built with HTML, CSS, and JavaScript.</p>
+        <a href="#" class="btn">Live Demo</a>
+      </div>
+      <div>
+        <h3>To-Do App</h3>
+        <p>A task management app using React and localStorage.</p>
+        <a href="#" class="btn">View Code</a>
+      </div>
+    </div>
+  </section>  <section id="services">
+    <h2 class="section-title">Services</h2>
+    <div class="services">
+      <div>
+        <h4>Web Development</h4>
+        <p>Custom websites built using modern front-end technologies.</p>
+      </div>
+      <div>
+        <h4>UI/UX Design</h4>
+        <p>Clean, user-friendly interface design tailored for users.</p>
+      </div>
+    </div>
+  </section>  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2025 Saad's Portfolio. All rights reserved.</p>
+  </footer>  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+    function toggleMobileMenu() {
+      const nav = document.getElementById("mobileNav");
+      nav.classList.toggle("show");
+    }
+  </script></body>
+</html>
